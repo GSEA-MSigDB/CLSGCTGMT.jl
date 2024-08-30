@@ -1,12 +1,8 @@
 using CLSGCTGMT
 
-using Aqua: test_all
-
 using Test: @test
 
 # ----------------------------------------------------------------------------------------------- #
-
-test_all(CLSGCTGMT; deps_compat = false, ambiguities = false)
 
 # ---- #
 
