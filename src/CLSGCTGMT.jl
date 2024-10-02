@@ -1,6 +1,6 @@
 module CLSGCTGMT
 
-using LeMoIO
+using Nucleus
 
 function read_cls(cl)
 
@@ -16,7 +16,7 @@ function read_cls(cl)
 
     if l1 == "#numeric"
 
-        LeMoIO.tabulate("Target", np, sa_, [parse(Float64, st) for _ in 1:1, st in va_])
+        Nucleus.Table.make("Target", np, sa_, [parse(Float64, st) for _ in 1:1, st in va_])
 
     else
 
@@ -46,7 +46,7 @@ function read_cls(cl)
 
         gr_id = Dict(gr => id for (id, gr) in enumerate(gr_))
 
-        LeMoIO.tabulate("Target", join(gr_, '_'), sa_, [gr_id[st] for _ in 1:1, st in va_])
+        Nucleus.Table.make("Target", join(gr_, '_'), sa_, [gr_id[st] for _ in 1:1, st in va_])
 
     end
 
@@ -54,7 +54,7 @@ end
 
 function read_gct(gc)
 
-    LeMoIO.read_table(gc; header = 3, drop = ["Description"])
+    Nucleus.IO.read_table(gc; header = 3, drop = ["Description"])
 
 end
 
